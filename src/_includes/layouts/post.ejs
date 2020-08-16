@@ -3,16 +3,23 @@ layout: layouts/base.ejs
 ---
 
 <article class="post">
+  <nav>
+    <a href="/blog">Back to home</a>
+  </nav>
   <header>
     <h1 class="font-bold text-3xl"><%= title %></h1>
     <time datetime="<%= date%>" class="text-gray-600">
       <%= this.dateFns.format(new Date(date), 'LLLL d, yyyy') %>
     </time>
+    <img class="w-1/2 mt-8 rounded-md" src="<%= img %>"/>
   </header>
-  <section class="pt-3 pb-3">
+  <section class="prose prose-sm sm:prose lg:prose-lg xl:prose-xl pt-16 pb-3">
     <%- content %>
   </section>
-  <footer>
-    <a href="/blog">Back to home</a>
-  </footer>
+
+  {<% if content | toc %>}
+  <aside>
+    {{ content | toc }}
+  </aside>
+{<% endif %>}
 </article>
