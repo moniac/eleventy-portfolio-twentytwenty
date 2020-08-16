@@ -2,6 +2,7 @@
 title: 'My third post'
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 date: 2020-06-06 00:00:00
+img: /assets/images/posts/error.png
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
