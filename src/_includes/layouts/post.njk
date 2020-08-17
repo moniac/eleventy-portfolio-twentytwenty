@@ -4,7 +4,7 @@ layout: default
 
 <section>
 
-  <article class="mx-auto measure markdown">
+  <article class="mx-auto markdown prose prose-sm sm:prose lg:prose-lg xl:prose-xl">
     <time value="{{ date }}" class="text-sm text-gray-600">Last updated: {{ date | readableDate }}</time>
     <h1 class="mt-6">{{ title }}</h1>
     <div class="mt-6 text-2xl text-gray-500 flow">
@@ -15,6 +15,8 @@ layout: default
     </div>
   </article>
 
-  <nav class="mx-auto mt-16 measure"><a href="{{ '/blog/' | url }}">← Blog index</a></nav>
+  <nav class="mx-auto mt-16 prose prose-sm sm:prose lg:prose-lg xl:prose-xl">
+    <a href="{{ '/blog/' | url }}">← Blog index</a>
+  </nav>
 
 </section>

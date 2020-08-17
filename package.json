@@ -1,12 +1,12 @@
 {
-  "name": "mf-blogstarter",
+  "name": "mohammed-mulazada-eleventy-portfolio",
   "version": "1.0.0",
-  "description": "Eleventy + Tailwind CSS blog starter",
-  "author": "Marc FILLEUL",
+  "description": "Mohammed Mulazada's Eleventy portfolio",
+  "author": "Mohammed Mulazada",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/marcfilleul/mf-blogstarter"
+    "url": "https://github.com/moniac/eleventy-portfolio-twentytwenty"
   },
   "browserslist": [
     "defaults"
@@ -23,6 +23,7 @@
   "dependencies": {
     "@11ty/eleventy": "0.11.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
+    "@tailwindcss/typography": "^0.2.0",
     "@tailwindcss/ui": "^0.1.2",
     "autoprefixer": "^9.7.2",
     "cross-env": "^7.0.0",

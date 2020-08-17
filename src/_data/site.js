@@ -6,7 +6,7 @@ const year = new Date().getFullYear();
 
 module.exports = {
   annee: `${year}`,
-  allowDarkMode: true,
+  allowDarkMode: false,
   lang: "en", // for html tag
   title: "Mohammed Mulazada's portfolio",
   description:
