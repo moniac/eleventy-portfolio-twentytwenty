@@ -12,13 +12,13 @@
     "defaults"
   ],
   "scripts": {
-    "build": "del-cli dist && eleventy && npm-run-all build:css build:html",
+    "build": "del-cli _site && eleventy && npm-run-all build:css build:html",
     "build:css": "cross-env NODE_ENV=production postcss src/_css/app.css -o src/_includes/css/style.min.css",
     "build:html": "cross-env ELEVENTY_ENV=production eleventy",
     "watch": "npm-run-all --parallel watch:css watch:html",
     "watch:css": "postcss src/_css/app.css -o src/assets/style.css --watch",
     "watch:html": "eleventy --serve --port=8080",
-    "dev": "del-cli dist && npm run watch"
+    "dev": "del-cli _site && npm run watch"
   },
   "dependencies": {
     "@11ty/eleventy": "0.11.0",

@@ -10,6 +10,6 @@
 .LSOverride
 
 # build artefacts
-/dist
+/_site
 /src/assets/style.css
 /src/_includes/style.min.css

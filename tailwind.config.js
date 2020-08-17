@@ -2,7 +2,7 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   purge: {
-    content: ["./dist/**/*.html"],
+    content: ["./_site/**/*.html"],
     whitelist: ["dark-mode"],
   },
   theme: {
