@@ -33,6 +33,6 @@
     "postcss-cli": "^7.1.1",
     "tailwindcss": "^1.6.2",
     "tailwindcss-dark-mode": "^1.1.6",
-    "terser": "^5.1.0"
+    "terser": "^5.2.0"
   }
 }
