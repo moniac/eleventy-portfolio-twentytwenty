@@ -350,3 +350,8 @@ pre[class*="language-"] {
 .token.variable {
   color: #ff6666;
 }
+
+html,
+body {
+  scroll-padding-top: 6rem;
+}

@@ -4,9 +4,16 @@ layout: default
 
 <section>
 
-  <article class="mx-auto markdown prose lg:prose-xl">
+  <article class="mx-auto prose lg:prose-xl">
     <time value="{{ date }}" class="text-sm text-gray-600">Last updated: {{ date | readableDate }}</time>
     <h1 class="mt-6">{{ title }}</h1>
+
+    {% if content | toc %}
+      <aside>
+        {{ content | toc | safe }}
+      </aside>
+    {% endif %}
+
     <img class="rounded-lg" src="{{img}}"/>
     <div class="mt-6 text-2xl text-gray-500 flow">
       {{ teaser | safe }}

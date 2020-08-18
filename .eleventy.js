@@ -1,9 +1,31 @@
 const { DateTime } = require("luxon");
+const markdownIt = require("markdown-it");
+const markdownItAnchor = require("markdown-it-anchor");
+const pluginTOC = require("eleventy-plugin-toc");
 
 // Plugins
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
+const mdOptions = {
+  html: true,
+  breaks: true,
+  linkify: true,
+  typographer: true,
+};
+const mdAnchorOpts = {
+  permalink: true,
+  permalinkClass: "anchor-link",
+  permalinkSymbol: "#",
+  level: [1, 2, 3, 4],
+};
+
 module.exports = function (eleventyConfig) {
+  eleventyConfig.setLibrary(
+    "md",
+    markdownIt(mdOptions).use(markdownItAnchor, mdAnchorOpts)
+  );
+  eleventyConfig.addPlugin(pluginTOC);
+
   // OPT-OUT OF USING .gitignore to prevent reload issue when css change
   eleventyConfig.setUseGitIgnore(false);
 
