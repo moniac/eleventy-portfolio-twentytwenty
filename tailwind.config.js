@@ -37,4 +37,10 @@ module.exports = {
     require("@tailwindcss/ui"), // https://tailwindui.com/components
     require("tailwindcss-dark-mode")(), // https://github.com/ChanceArthur/tailwindcss-dark-mode
   ],
+  experimental: {
+    uniformColorPalette: true,
+  },
+  future: {
+    removeDeprecatedGapUtilities: true,
+  },
 };

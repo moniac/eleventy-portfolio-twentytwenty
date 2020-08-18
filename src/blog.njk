@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Blog
-description: "Awesome blog posts"
+description: "Recent Posts"
 pagination:
   data: collections.post
   alias: list
@@ -13,7 +13,7 @@ pagination:
 <section class="my-auto">
   <section class="text-gray-700 body-font px-0">
     <div class="container md:px-5 py-0 mx-auto">
-      <h1>Recent Posts</h1>
+      <h1>{{description}}</h1>
       <ul class="grid md:grid-flow-dense grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {%- for post in list %}
           <li class="">
