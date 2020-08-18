@@ -13,11 +13,11 @@ pagination:
 <section class="my-auto">
   <section class="text-gray-700 body-font px-0">
     <div class="container md:px-5 py-0 mx-auto">
-      <h1>{{description}}</h1>
+      <h1 >{{description}}</h1>
       <ul class="grid md:grid-flow-dense grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {%- for post in list %}
-          <li class="">
-            <div class="h-full border-2 border-gray-200 rounded-lg overflow-hidden max-w-sm w-full rounded rounded-lg overflow-hidden shadow-xl flex flex-col h-full">
+          <li>
+            <div class="h-full mx-auto md:mx-0 overflow-hidden max-w-sm w-full rounded-lg shadow-xl flex flex-col h-full">
               <img class="h-64 md:h-48 lg:h-56 w-full object-cover object-center" src="{{ post.data.img }}" alt="blog">
               <div class="p-6 text-bodytext">
                 <h1 class="title-font text-lg font-medium mb-3">{{post.data.title}}</h1>
