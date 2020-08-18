@@ -39,7 +39,9 @@
             "@type": "WebPage",
             "@id": "{{site.url}}{{page.url}}"
           },
-          "@context": "http://schema.org"
+          "@context": "http://schema.org",
+          "image": "{{site.url}}{{img}}",
+          "dateModified": "{{date | safe}}"
         }
       </script>
       {% endif%}</p>
