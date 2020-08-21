@@ -7,8 +7,42 @@ description: "Mohammed Mulazada's Portfolio, an Amsterdam based web developer."
 <section class="my-auto">
   <div class="mx-auto measure fade-in-down">
     <p class="font-semibold uppercase text-primary">Welcome to my portfolio!</p>
-    <h1 class="mt-6 font-bold leading-tight font-display">I am Mohammed Mulazada.</h1>
+    <h1 class="text-4xl md:text-5xl lg:text-5xl mt-6 font-bold leading-tight font-display">I am <br/>Mohammed Mulazada.</h1>
     <h2 class="mt-6 font-sans text-2xl font-light">A front-end developer based in Amsterdam.
     </h2>
   </div>
 </section>
+
+{{ collections.work | log }}
+
+<div class="flex bg-gray-300 rounded-lg md:mx-8">
+  <section class="my-auto mx-auto">
+    <ul class="grid md:grid-flow-dense grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+      {%- for work in collections.work %}
+        <li>
+          <div class="max-w-sm rounded-lg overflow-hidden shadow-lg h-full p-8 flex justify-between flex-col bg-white">
+            <div class="flex flex-col justify-between h-full">
+              <div class="font-bold text-xl mb-2 text-primary">{{work.data.title}}</div>
+              <p class="text-gray-700 text-base flex justify-between h-full">
+                {{work.data.description}}
+              </p>
+
+              <div class="pt-2">
+                <a target="_blank" rel="noopener noreferrer-tag" href="{{ work.data.workLink }}" class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Read More <span class="sr-only">about {{work.data.title}}</span>
+                </a>
+              </div>
+            </div>
+
+            {% if work.data.technologies%}
+              <div class="pt-2">
+                {%- for category in work.data.technologies %}
+                  <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{{category}}</span>
+                {% endfor -%}
+              </div>
+              {% endif%}
+            </div>
+          </li>
+        {% endfor -%}
+      </ul>
+    </section>
+  </div>

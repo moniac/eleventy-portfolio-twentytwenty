@@ -13,8 +13,8 @@ pagination:
 <section class="my-auto">
   <section class="text-gray-700 body-font px-0">
     <div class="container md:px-5 py-0 mx-auto">
-      <h1 >{{description}}</h1>
-      <ul class="grid md:grid-flow-dense grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <h1 class="font-display font-bold pb-4">{{description}}</h1>
+      <ul class="grid md:grid-flow-dense grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
         {%- for post in list %}
           <li>
             <div class="h-full mx-auto md:mx-0 overflow-hidden max-w-sm w-full rounded-lg shadow-xl flex flex-col h-full">
@@ -30,26 +30,28 @@ pagination:
                     </svg>
                   </a>
                 </div>
-                <div class="py-4">
-                  {%- for category in post.data.categories %}
-                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{{category}}</span>
-                  {% endfor -%}
+                {% if post.data.categories%}
+                  <div class="py-4">
+                    {%- for category in post.data.categories %}
+                      <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{{category}}</span>
+                    {% endfor -%}
+                  </div>
+                  {% endif%}
                 </div>
               </div>
-            </div>
-          </li>
-        {% endfor -%}
-      </ul>
+            </li>
+          {% endfor -%}
+        </ul>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 </section>
 
 <ol>
-{% if pagination.previousPageHref %}
-  <a href="{{pagination.previousPageHref}}">previous</next>
-{% endif %}
-{% if pagination.nextPageHref %}
-  <a href="{{pagination.nextPageHref}}">next</next>
-{% endif %}
+  {% if pagination.previousPageHref %}
+    <a href="{{pagination.previousPageHref}}">previous</next>
+  {% endif %}
+  {% if pagination.nextPageHref %}
+    <a href="{{pagination.nextPageHref}}">next</next>
+  {% endif %}
 </ol>
