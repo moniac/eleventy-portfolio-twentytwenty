@@ -14,7 +14,7 @@
 
   /* Colors */
   --color-bodybg: theme("colors.white");
-  --color-bodytext: theme("colors.cool-gray.700");
+  --color-bodytext: #364152;
   --color-muted: theme("colors.gray.50");
   --color-primary: theme("colors.blue.700");
   --color-secondary: theme("colors.pink.700");

@@ -44,11 +44,18 @@
           "dateModified": "{{date | safe}}"
         }
       </script>
-      {% endif%}</p>
-  </head>
 
-  <body class="{{ classes.body }}">
-    <p>
+      {% set typographyCSS %}
+      {% include "css/typography.css" %}
+      {% endset %}
+      <!-- feed it through our cssmin filter to minify -->
+      <style>
+        {{typographyCSS | cssmin | safe}}
+      </style>
+      {% endif%}
+    </head>
+
+    <body class="{{ classes.body }}">
       {% include "components/header.njk" %}
 
       <main id="main-content" style="scroll-margin-top: 5rem;" class="{{ classes.main }}">

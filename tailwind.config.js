@@ -2,7 +2,7 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   purge: {
-    content: ["./_site/**/*.html"],
+    content: ["./src/**/*.{js,mdx}", "./_site/**/*.html"],
     whitelist: ["dark-mode"],
   },
   theme: {
@@ -34,7 +34,6 @@ module.exports = {
     textColor: ["hover", "focus", "dark", "dark-hover", "dark-focus"],
   },
   plugins: [
-    require("@tailwindcss/ui"), // https://tailwindui.com/components
     require("tailwindcss-dark-mode")(), // https://github.com/ChanceArthur/tailwindcss-dark-mode
   ],
   experimental: {

@@ -1,5 +1,7 @@
 const { DateTime } = require("luxon");
 const markdownIt = require("markdown-it");
+const CleanCSS = require("clean-css");
+
 const markdownItAnchor = require("markdown-it-anchor");
 const pluginTOC = require("eleventy-plugin-toc");
 
@@ -25,6 +27,10 @@ module.exports = function (eleventyConfig) {
     markdownIt(mdOptions).use(markdownItAnchor, mdAnchorOpts)
   );
   eleventyConfig.addPlugin(pluginTOC);
+
+  eleventyConfig.addFilter("cssmin", function (code) {
+    return new CleanCSS({}).minify(code).styles;
+  });
 
   // OPT-OUT OF USING .gitignore to prevent reload issue when css change
   eleventyConfig.setUseGitIgnore(false);

@@ -77,6 +77,7 @@ pre {
 
 a {
   background-color: transparent;
+  color: inherit;
 }
 
 /**
@@ -88,7 +89,7 @@ abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -177,7 +178,8 @@ textarea {
  */
 
 button,
-input { /* 1 */
+input {
+  /* 1 */
   overflow: visible;
 }
 
@@ -187,7 +189,8 @@ input { /* 1 */
  */
 
 button,
-select { /* 1 */
+select {
+  /* 1 */
   text-transform: none;
 }
 
@@ -417,7 +420,9 @@ ul {
  */
 
 html {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 1 */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 1 */
   line-height: 1.5; /* 2 */
 }
 
@@ -482,19 +487,23 @@ textarea {
   resize: vertical;
 }
 
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
   color: #a0aec0;
 }
 
-input::-moz-placeholder, textarea::-moz-placeholder {
+input::-moz-placeholder,
+textarea::-moz-placeholder {
   color: #a0aec0;
 }
 
-input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
   color: #a0aec0;
 }
 
-input::-ms-input-placeholder, textarea::-ms-input-placeholder {
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
   color: #a0aec0;
 }
 
@@ -561,7 +570,8 @@ pre,
 code,
 kbd,
 samp {
-  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
 }
 
 /**
@@ -725,11 +735,11 @@ h4 {
 
 a:not([class]) {
   -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+  text-decoration-line: underline;
   -webkit-text-decoration-skip: ink;
-          text-decoration-skip-ink: auto;
+  text-decoration-skip-ink: auto;
   -webkit-text-decoration-color: var(--color-links);
-          text-decoration-color: var(--color-links);
+  text-decoration-color: var(--color-links);
   text-decoration-thickness: 2px;
   text-underline-offset: 3px;
 }
@@ -812,8 +822,8 @@ a:not([class]):hover {
 
 .form-input {
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   background-color: #ffffff;
   border-color: #d2d6dc;
   border-width: 1px;
@@ -859,8 +869,8 @@ a:not([class]):hover {
 
 .form-textarea {
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   background-color: #ffffff;
   border-color: #d2d6dc;
   border-width: 1px;
@@ -906,8 +916,8 @@ a:not([class]):hover {
 
 .form-multiselect {
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   background-color: #ffffff;
   border-color: #d2d6dc;
   border-width: 1px;
@@ -929,10 +939,10 @@ a:not([class]):hover {
 .form-select {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3e%3cpath d='M7 7l3-3 3 3m0 6l-3 3-3-3' stroke='%239fa6b2' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   -webkit-print-color-adjust: exact;
-          color-adjust: exact;
+  color-adjust: exact;
   background-repeat: no-repeat;
   background-color: #ffffff;
   border-color: #d2d6dc;
@@ -959,7 +969,8 @@ a:not([class]):hover {
   }
 }
 
-@media print and (-ms-high-contrast: active), print and (-ms-high-contrast: none) {
+@media print and (-ms-high-contrast: active),
+  print and (-ms-high-contrast: none) {
   .form-select {
     padding-right: 0.75rem;
   }
@@ -973,17 +984,17 @@ a:not([class]):hover {
 
 .form-checkbox {
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   -webkit-print-color-adjust: exact;
-          color-adjust: exact;
+  color-adjust: exact;
   display: inline-block;
   vertical-align: middle;
   background-origin: border-box;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   flex-shrink: 0;
   height: 1rem;
   width: 1rem;
@@ -1025,17 +1036,17 @@ a:not([class]):hover {
 
 .form-radio {
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   -webkit-print-color-adjust: exact;
-          color-adjust: exact;
+  color-adjust: exact;
   display: inline-block;
   vertical-align: middle;
   background-origin: border-box;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   flex-shrink: 0;
   border-radius: 100%;
   height: 1rem;
@@ -1193,7 +1204,9 @@ a:not([class]):hover {
 }
 
 .font-sans {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .font-light {
@@ -1408,7 +1421,7 @@ a:not([class]):hover {
 
 .fade-in-down {
   -webkit-animation: fadeInDown 0.7s ease both;
-          animation: fadeInDown 0.7s ease both;
+  animation: fadeInDown 0.7s ease both;
 }
 
 @-webkit-keyframes fadeInDown {
@@ -1460,7 +1473,7 @@ a[rel~="external"]::after {
   padding-left: 0.2em;
   line-height: 0.75;
   -webkit-text-decoration-line: none;
-          text-decoration-line: none;
+  text-decoration-line: none;
 }
 
 /* Syntax Highlighting */
@@ -1493,7 +1506,10 @@ pre[class*="language-"] ::-moz-selection {
   background-color: var(--color-primary);
 }
 
-code[class*="language-"]::-moz-selection, pre[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection, pre[class*="language-"] ::-moz-selection {
+code[class*="language-"]::-moz-selection,
+pre[class*="language-"]::-moz-selection,
+code[class*="language-"] ::-moz-selection,
+pre[class*="language-"] ::-moz-selection {
   background-color: var(--color-primary);
 }
 
