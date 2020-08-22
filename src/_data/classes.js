@@ -7,5 +7,5 @@ module.exports = {
     "sticky top-0 z-10 bg-bodybg text-bodytext border-b border-gray-100 dark:border-gray-800 px-4 tracking-wider",
   main: "flex flex-col flex-grow",
   contact_button: "btn btn-primary text-white dark:text-cool-gray-900",
-  footer: "border-t border-cool-gray-100 dark:border-gray-700 bg-muted",
+  footer: "border-t border-gray-100 dark:border-gray-700 bg-muted mt-8",
 };
