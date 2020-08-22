@@ -19,7 +19,7 @@
   --color-primary: theme("colors.blue.700");
   --color-secondary: theme("colors.pink.700");
   --color-links: var(--color-primary);
-  --color-focus: var(--color-secondary);
+  --color-focus: var(--color-primary);
 }
 
 /* ********************** */
