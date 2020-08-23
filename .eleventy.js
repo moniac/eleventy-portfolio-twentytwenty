@@ -1,7 +1,35 @@
 const { DateTime } = require("luxon");
 const markdownIt = require("markdown-it");
 const CleanCSS = require("clean-css");
+const readingTime = require("eleventy-plugin-reading-time");
+
+const markdownItAnchor = require("markdown-it-anchor");
+const pluginTOC = require("eleventy-plugin-toc");
+
+// Plugins
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+
+const mdOptions = {
+  html: true,
+  breaks: true,
+  linkify: true,
+  typographer: true,
+};
+const mdAnchorOpts = {
+  permalink: true,
+  permalinkClass: "anchor-link",
+  permalinkSymbol: "#",
+  level: [1, 2, 3, 4],
+};
+
 module.exports = function (eleventyConfig) {
+  eleventyConfig.setLibrary(
+    "md",
+    markdownIt(mdOptions).use(markdownItAnchor, mdAnchorOpts)
+  );
+  eleventyConfig.addPlugin(pluginTOC);
+  eleventyConfig.addPlugin(readingTime);
+
   eleventyConfig.addFilter("cssmin", function (code) {
     return new CleanCSS({}).minify(code).styles;
   });
@@ -42,6 +70,9 @@ module.exports = function (eleventyConfig) {
       require("./src/_utils/minify-html.js")
     );
   }
+
+  // Plugins
+  // eleventyConfig.addPlugin(syntaxHighlight);
 
   // Static assets to pass through
   eleventyConfig.addPassthroughCopy("src/assets");
