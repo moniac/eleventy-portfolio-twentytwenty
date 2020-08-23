@@ -5,9 +5,6 @@ const CleanCSS = require("clean-css");
 const markdownItAnchor = require("markdown-it-anchor");
 const pluginTOC = require("eleventy-plugin-toc");
 
-// Plugins
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-
 const mdOptions = {
   html: true,
   breaks: true,
@@ -68,9 +65,6 @@ module.exports = function (eleventyConfig) {
       require("./src/_utils/minify-html.js")
     );
   }
-
-  // Plugins
-  eleventyConfig.addPlugin(syntaxHighlight);
 
   // Static assets to pass through
   eleventyConfig.addPassthroughCopy("src/assets");
