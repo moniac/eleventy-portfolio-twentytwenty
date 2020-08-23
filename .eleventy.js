@@ -72,7 +72,7 @@ module.exports = function (eleventyConfig) {
   }
 
   // Plugins
-  // eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(syntaxHighlight);
 
   // Static assets to pass through
   eleventyConfig.addPassthroughCopy("src/assets");
