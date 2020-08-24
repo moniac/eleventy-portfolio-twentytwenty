@@ -1591,7 +1591,7 @@ pre[class*="language-"] {
 }
 
 .token.deleted {
-  color: #ff6666;
+  color: #ffa07a;
 }
 
 .token.doctype {
@@ -1599,7 +1599,7 @@ pre[class*="language-"] {
 }
 
 .token.entity {
-  color: #ff6666;
+  color: #ffa07a;
 }
 
 .token.function {
@@ -1661,7 +1661,7 @@ pre[class*="language-"] {
 }
 
 .token.selector {
-  color: #ff6666;
+  color: #ffa07a;
 }
 
 .token.string {
@@ -1673,7 +1673,7 @@ pre[class*="language-"] {
 }
 
 .token.tag {
-  color: #ff6666;
+  color: #ffa07a;
 }
 
 .token.unit {
@@ -1681,11 +1681,11 @@ pre[class*="language-"] {
 }
 
 .token.url {
-  color: #ff6666;
+  color: #ffa07a;
 }
 
 .token.variable {
-  color: #ff6666;
+  color: #ffa07a;
 }
 
 @media (min-width: 768px) {
