@@ -2,6 +2,7 @@ const { DateTime } = require("luxon");
 const markdownIt = require("markdown-it");
 const CleanCSS = require("clean-css");
 const readingTime = require("eleventy-plugin-reading-time");
+const Terser = require("terser");
 
 const markdownItAnchor = require("markdown-it-anchor");
 const pluginTOC = require("eleventy-plugin-toc");
@@ -57,7 +58,15 @@ module.exports = function (eleventyConfig) {
   });
 
   // compress and combine js files
-  eleventyConfig.addFilter("jsmin", require("./src/_utils/minify-js.js"));
+  eleventyConfig.addNunjucksAsyncFilter("jsmin", async (code, callback) => {
+    try {
+      const minified = await Terser.minify(code);
+      return callback(null, minified.code);
+    } catch (err) {
+      console.error("Error during terser minify:", err);
+      return callback(err, code);
+    }
+  });
 
   eleventyConfig.addFilter("log", (value) => {
     console.log(value);
