@@ -15,7 +15,9 @@ layout: default
       </aside>
     {% endif %}
 
-    <img alt="" class="rounded-lg" src="{{img}}"/>
+    {% myResponsiveImage img,
+    "alt2", "webp, jpeg", "w-full rounded-lg" %}
+    {# <img alt="" class="rounded-lg" src="{{img}}"/> #}
     <div class="mt-6 text-2xl text-gray-500 flow">
       {{ teaser | safe }}
     </div>

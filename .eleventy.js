@@ -3,6 +3,7 @@ const markdownIt = require("markdown-it");
 const CleanCSS = require("clean-css");
 const readingTime = require("eleventy-plugin-reading-time");
 const Terser = require("terser");
+const Image = require("@11ty/eleventy-img");
 
 const markdownItAnchor = require("markdown-it-anchor");
 const pluginTOC = require("eleventy-plugin-toc");
@@ -66,6 +67,70 @@ module.exports = function (eleventyConfig) {
       console.error("Error during terser minify:", err);
       return callback(err, code);
     }
+  });
+
+  eleventyConfig.addNunjucksAsyncShortcode("myImage", async function (
+    src,
+    alt,
+    outputFormat = "jpeg"
+  ) {
+    if (alt === undefined) {
+      // You bet we throw an error on missing alt (alt="" works okay)
+      throw new Error(`Missing \`alt\` on myImage from: ${src}`);
+    }
+
+    // returns Promise
+    let stats = await Image(src, {
+      widths: [50],
+      formats: ["webp", "jpeg"],
+      urlPath: "/assets/img/",
+      outputDir: "./_site/assets/img/",
+    });
+
+    let props = stats[outputFormat].pop();
+
+    return `<img src="${props.url}" width="${props.width}" height="${props.height}" alt="${alt}">`;
+  });
+
+  eleventyConfig.addNunjucksAsyncShortcode("myResponsiveImage", async function (
+    src,
+    alt,
+    outputFormat = "jpeg",
+    className
+  ) {
+    if (alt === undefined) {
+      // You bet we throw an error on missing alt (alt="" works okay)
+      throw new Error(`Missing \`alt\` on myResponsiveImage from: ${src}`);
+    }
+
+    let stats = await Image(src, {
+      widths: [480, 900, 1200, null],
+      formats: ["webp", "jpeg"],
+      urlPath: "/assets/img/",
+      outputDir: "./_site/assets/img/",
+    });
+    let lowestSrc = stats[outputFormat.split(",")[0]][0];
+    let sizes =
+      "(min-width: 350px) 480w, (min-width: 950px) 1200w, (min-width: 1300px) 1600w, 100vw"; // Make sure you customize this!
+
+    // Iterate over formats and widths
+    return `<picture>
+      ${Object.values(stats)
+        .map((imageFormat) => {
+          return `<source type="image/${
+            imageFormat[0].format
+          }" srcset="${imageFormat
+            .map((entry) => `${entry.url} ${entry.width}w`)
+            .join(", ")}" sizes="${sizes}">`;
+        })
+        .join("\n")}
+        <img
+          src="${lowestSrc.url}"
+          width="${lowestSrc.width}"
+          height="${lowestSrc.height}"
+          alt=${alt}
+          class="${className}">
+      </picture>`;
   });
 
   eleventyConfig.addFilter("log", (value) => {

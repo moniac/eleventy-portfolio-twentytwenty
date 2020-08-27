@@ -18,7 +18,9 @@ pagination:
         {%- for post in list %}
           <li>
             <div class="h-full mx-auto md:mx-0 overflow-hidden max-w-sm w-full rounded-lg shadow-xl flex flex-col h-full">
-              <img class="h-64 md:h-48 lg:h-56 w-full object-cover object-center" src="{{ post.data.img }}" alt="blog">
+
+              {% myResponsiveImage post.data.img,
+    "alt", "webp, jpeg", "h-64 md:h-48 lg:h-56 w-full object-cover"%}
               <div class="p-6 text-bodytext">
                 <h1 class="title-font text-lg font-medium mb-3">{{post.data.title}}</h1>
                 <p class="leading-relaxed mb-3">{{post.data.teaser}}</p>
